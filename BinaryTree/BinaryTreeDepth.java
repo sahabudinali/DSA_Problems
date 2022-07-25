@@ -18,15 +18,17 @@ class Binary {
 			return 0;
 		else
 		{
-		    
-			int lDepth = maxDepth(node.left);
-			int rDepth = maxDepth(node.right);
 
-			/* use the larger one */
-			if (lDepth > rDepth)
-				return (lDepth + 1);
-			else
-				return (rDepth + 1);
+// 			1				
+// 		   2	       3
+// 		 	    4	    5
+				
+                  return Math.max(maxDepth(node.left),maxDepth(node.right))+1; 
+			// first left hand side if the left hand side of the root has not children then both will come 0 and 0 and max value is 0 and then add into 1.
+			// it means that from the left hand side value comes 1.
+			// comes to right hand side suppose if the right side of the root have two children then from the both side we are getting 1, 1 max value is 1
+			// and add into 1 which becomes 2.
+			// then we are going to the main root from left side value is 1 and right side value is 2 max value is 2 after into 1 which becomes 3.
 			
 			// this statement take little bit as compare to max function because first it store the value and then compare the values and in math function
 			// only it time for recursion call every time
